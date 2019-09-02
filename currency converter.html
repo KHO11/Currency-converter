@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<head>
+    <title>Currency converter</title>
+
+    <style>
+        .textBoxes {
+            position:absolute;
+            top:10%;
+            left:35%;
+            background-color: black;
+            height:800px;
+            width:600px;
+            border: 2px solid green;
+        }
+
+        #englishFlag {
+            margin-left:20px;
+
+        }
+
+        #thailandFlag {
+            margin-left:25px;
+        }
+
+        #spainFlag {
+            margin-left: 19px;
+        }
+
+        #usaFlag {
+            margin-left: 16px;
+        }
+
+        body {
+            background-image: url("money.jpg");
+            background-repeat: no-repeat;
+        }
+
+        label {
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            color:white;
+            text-align: center;
+        }
+
+        ul.currencies li  {
+            background-color:black;
+            border-radius: 10px;
+           list-style-type: none;
+            margin-bottom: 1rem;
+            padding:1rem 1rem 0.75rem 1rem;
+        }
+
+        input[type=button] {
+            background-color: green;
+            font-size: 24px;
+            border:2px solid black;
+            border-radius: 10px;
+        }
+
+        input[type=button]:hover {
+            background-color: purple;
+            font-size: 24px;
+            border:2px solid black;
+            border-radius: 10px;
+        }
+
+        .button:active {
+           background-color: #3e8e41;
+           box-shadow: 0 5px #666;
+           transform: translateY(4px);
+        }
+
+        .button {
+           padding: 15px 25px;
+           font-size: 24px;
+           text-align: center;
+           cursor: pointer;
+           outline: none;
+           color: #fff;
+           background-color: #4CAF50;
+           border: none;
+           border-radius: 19px;
+           box-shadow: 0 9px #999;
+        }
+
+        .info {
+            background-color: lightgreen;
+            padding:10px;
+            position:relative;
+            right:30px;
+            width:530px;
+            
+        }
+
+        .info:hover {
+            background-color: #666666;
+
+        }  
+
+        .secondInfo {
+            background-color: lightgreen;
+            padding:10px;
+            position:relative;
+            right:30px;
+            width:530px;
+        }
+
+        .secondInfo:hover {
+            background-color: #666666;
+
+        } 
+
+        .thirdInfo {
+            background-color: lightgreen;
+            padding:10px;
+            position:relative;
+            right:30px;
+            width:530px;
+        } 
+
+        .thirdInfo:hover {
+            background-color: #666666;
+
+        } 
+
+        .fourthInfo {
+            background-color: lightgreen;
+            padding:10px;
+            position:relative;
+            right:30px;
+            width:530px;
+        }
+
+        .fourthInfo:hover {
+            background-color: #666666;
+
+        } 
+
+        input[type=reset] {
+            background-color: green;
+            font-size: 24px;
+            border:2px solid black;
+            border-radius: 10px;
+        }
+
+        input[type=reset]:hover {
+            background-color: purple;
+            font-size: 24px;
+            border:2px solid black;
+            border-radius: 10px;
+        }
+
+        span {
+            font-size: 20px;
+        }
+
+        h1 {
+            background-color: green;
+            padding:10px;
+            position:relative;
+            right:15px;
+            width:530px;
+        }
+
+        .twoButtons {
+            margin-left:150px;
+        }
+
+
+
+
+        
+    </style>
+
+
+    <li>
+</head>
+<body>
+
+<div class="textBoxes">
+
+      
+
+    <ul class="currencies">
+            <div class="header">
+                <h1>Currency Converter</h1>
+            </div>
+        <li class="currency" id="English">
+        
+        
+        <form action="">
+
+      
+            
+        <div class="info">
+            <img src="englishFlag.png" id="englishFlag" width="50px" height="30px">
+            <br><br>
+            <input type="number" id="pounds" onchange="poundsConverter()">
+            <label for="GBP"> GBP <span>£</span> </label>
+        </div>
+        
+
+        
+
+            </br><br><br>
+        <div class="secondInfo">
+            <img src="thailandFlag.png" id="thailandFlag" width="50px" height="30px">
+            <br><br>
+            <input type="number" id="baht" onchange="bahtConverter()" />
+            <label for="baht"> baht <img src="bahtSign.jpg" width="30px" height="30px"></label>
+        </div>  
+
+
+            </br><br><br>
+
+        <div class="thirdInfo">
+             
+            <img src="european.png" id="spainFlag" width="50px" height="30px">
+            <br><br>
+            <input type="number" id="euros" onchange="eurosConverter()"/>
+            <label for="euros"> euros <span>€</span></label>
+        </div>
+            
+
+            </br><br><br>
+            
+        <div class="fourthInfo">
+            <img src="usaFlag.png" id="usaFlag" width="50px" height="30px">
+            <br><br>
+            <input type="number" id="dollar" onchange="dollarConverter()" />
+            <label for="dollar"> dollar <span>$</span></label>
+        </div>
+            
+
+            <br><br><br>
+        
+        <div class="twoButtons">
+            <input type="button" value="convert" id="buttonClick">
+           
+            <input type="reset" value="Reset" />
+
+        </div>
+
+
+        </li>
+
+    </div>
+
+</div>
+</form>
+
+<script>
+  
+     function poundsConverter() {
+        document.getElementById("baht").value=document.getElementById("pounds").value * 41.47;
+        document.getElementById("euros").value=document.getElementById("pounds").value * 1.17;
+        document.getElementById("dollar").value=document.getElementById("pounds").value * 1.31;
+     }
+
+     function bahtConverter () {
+        document.getElementById("pounds").value=document.getElementById("baht").value * 0.024;
+        document.getElementById("euro").value=document.getElementById("baht").value * 0.028;
+        document.getElementById("dollar").value=document.getElementById("baht").value * 0.031;
+
+     }
+
+     function eurosConverter() {
+        document.getElementById("pounds").value=document.getElementById("euros").value * 0.86;
+        document.getElementById("baht").value=document.getElementById("euros").value * 35.59;
+        document.getElementById("dollar").value=document.getElementById("euros").value * 1.12;     
+        }
+
+     function dollarConverter () {
+        document.getElementById("pounds").value=document.getElementById("dollar").value * 0.77;
+        document.getElementById("baht").value=document.getElementById("dollar").value * 31.78;
+        document.getElementById("euro").value=document.getElementById("dollar").value * 0.89;
+     }
+
+
+</script>
+</body>
+</html>
